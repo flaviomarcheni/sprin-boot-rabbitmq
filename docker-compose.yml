@@ -1,0 +1,25 @@
+version: "2"
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: db_claro_controle
+      POSTGRES_USER: clarocontrole
+      POSTGRES_PASSWORD: clarocontrole
+    ports:
+      - 5432:5432
+      
+  rabbit-admin:
+    image: rabbitmq:3-management 
+    hostname: rabbitmq-admin
+    domainname: rabbitmqadmin.local
+    restart: unless-stopped
+    mem_limit: 512m
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin 
+            
