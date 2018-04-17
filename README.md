@@ -1,1 +1,1 @@
-# sprin-boot-rabbitmq
+# spring-boot with rabbitmq example
